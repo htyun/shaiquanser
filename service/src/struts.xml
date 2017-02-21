@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="gbk" />
+	<package name="activity" namespace="/" extends="json-default">
+
+		<action name="userReg" class="jxnu.x3107.action.ActivityUserRegLogAction"
+			method="activityRegUser">
+			<result type="json"></result>
+		</action>
+
+		<action name="userLog" class="jxnu.x3107.action.ActivityUserRegLogAction"
+			method="activityLogUser">
+			<result type="json"></result>
+		</action>
+
+		<action name="userInfo" class="jxnu.x3107.action.ActivityUserRegLogAction"
+			method="activityUserInfo">
+			<result type="json"></result>
+		</action>
+		<action name="userInfoOther" class="jxnu.x3107.action.ActivityUserRegLogAction"
+			method="activityUserInfoOther">
+			<result type="json"></result>
+		</action>
+		<action name="alUserInfo" class="jxnu.x3107.action.ActivityUserRegLogAction"
+			method="activityAlUserInfo">
+			<result type="json"></result>
+		</action>
+		<action name="alPassword" class="jxnu.x3107.action.ActivityUserRegLogAction"
+			method="actAlPassword">
+			<result type="json"></result>
+		</action>
+		<action name="uploadUserLogo" class="jxnu.x3107.action.ActivityUserRegLogAction"
+			method="activityupUserLogo">
+			<result type="json"></result>
+		</action>
+		<action name="allGoodsInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actgetGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="goodsOlInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actgetOlGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="goodsIDInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actgetIDGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="getClassGoodsInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actgetClassGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="getSeekGoodsInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actgetSeekGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="uploadGoodsInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actuploadGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="upGoodsLogo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actupGoodsLogo">
+			<result type="json"></result>
+		</action>
+		<action name="altIDGoodsInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actaltIDGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="delIDGoodsInfo" class="jxnu.x3107.action.ActivityGoodsAction"
+			method="actdelIDGoodsInfo">
+			<result type="json"></result>
+		</action>
+		<action name="addGoodsType" class="jxnu.x3107.action.ActivityGoodsTypeAction"
+			method="actaddGoodsType">
+			<result type="json"></result>
+		</action>
+		<action name="getGoodsTypeInfo" class="jxnu.x3107.action.ActivityGoodsTypeAction"
+			method="actgetGoodsTypeInfo">
+			<result type="json"></result>
+		</action>
+		<action name="delGoodsType" class="jxnu.x3107.action.ActivityGoodsTypeAction"
+			method="actdelGoodsType">
+			<result type="json"></result>
+		</action>
+		<action name="addFollow" class="jxnu.x3107.action.ActivityFollowAction"
+			method="actaddFollow">
+			<result type="json"></result>
+		</action>
+		<action name="delFollow" class="jxnu.x3107.action.ActivityFollowAction"
+			method="actdelFollow">
+			<result type="json"></result>
+		</action>
+		<action name="getFollow" class="jxnu.x3107.action.ActivityFollowAction"
+			method="actgetFollow">
+			<result type="json"></result>
+		</action>
+		<action name="getFollowGoods" class="jxnu.x3107.action.ActivityFollowAction"
+			method="actgetFollowGoods">
+			<result type="json"></result>
+		</action>
+
+	</package>
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 跳转 -->
+		<action name="tzAction1" class="jxnu.x3107.action.IndexAction"
+			method="tzLogin">
+			<result name="loginSu">/manager/loginMana.jsp</result>
+		</action>
+		<action name="tzAction2" class="jxnu.x3107.action.IndexAction"
+			method="tzReg">
+			<result name="regSu">/manager/regMana.jsp</result>
+		</action>
+		<action name="zx" class="jxnu.x3107.action.IndexAction" method="zx">
+			<result name="zxS">/manager/loginMana.jsp</result>
+		</action>
+		
+		
+
+		<!-- 登录 -->
+		<action name="manaLogin" class="jxnu.x3107.action.LogRegAction"
+			method="loginManager">
+			<result name="loginSu">/index.jsp</result>
+			<result name="loginFa">/manager/loginMana.jsp</result>
+			<result name="input">/manager/loginMana.jsp</result>
+			<result name="fail">/manager/loginMana.jsp</result>
+		</action>
+		<!-- 注册 -->
+		<action name="manaReg" class="jxnu.x3107.action.LogRegAction"
+			method="regManager">
+			<result name="regSu">/manager/loginMana.jsp</result>
+			<result name="regFa">/manager/regMana.jsp</result>
+			<result name="input">/manager/regMana.jsp</result>
+			<result name="fail">/manager/regMana.jsp</result>
+		</action>
+
+		<!-- 获取所有用户 -->
+<!-- 		<action name="indexGetUser" class="jxnu.x3107.action.IndexAction"
+			method="indexGetUser">
+			<result name="getSU">/manager/userInfo.jsp</result>
+
+		</action> -->
+		<action name="indexGetUser" class="jxnu.x3107.action.UserInfoAction"
+			method="getUserInfo">
+			<result name="uInSU" type="chain">Page</result>
+		</action>
+		<action name="delUser" class="jxnu.x3107.action.UserInfoAction" method="deletUser">
+			<result name="deletSU" type="chain">Page</result>
+			<result name="deletFA" type="chain">Page</result>
+		</action>
+		<action name="insertUser" class="jxnu.x3107.action.UserInfoAction" method="insertUser">
+			<result name="insSU" type="chain">Page</result>
+			<result name="insFA" >/user/insertUser.jsp</result>
+		</action>
+		<action name="editUser" class="jxnu.x3107.action.UserInfoAction" method="eidtUser">
+			<result name="editSU" type="chain">Page</result>
+			<result name="editFA" >/user/editUser.jsp</result>
+		</action>
+		<action name="edit" class="jxnu.x3107.action.UserInfoAction" method="eidt">
+			<result name="editSU" >/user/editUser.jsp</result>
+		</action>
+		<action name="Page" class="jxnu.x3107.action.UserInfoAction" method="usersByPage">
+			<result name="pageSU">/user/userInfo.jsp</result>
+			<result name="pageF">/user/userInfo.jsp</result>
+		</action>
+		
+		<!-- 获取商品 -->
+		<action name="indexGetGoods" class="jxnu.x3107.action.GoodsInfoAction"
+			method="getGoodsInfo">
+			<result name="gInSU" type="chain">Pages</result>
+		</action>
+		<action name="delGoods" class="jxnu.x3107.action.GoodsInfoAction"
+			method="delGoods">
+			<result name="deletSU" type="chain">Pages</result>
+			<result name="deletFA" type="chain">Pages</result>
+		</action>
+		<action name="insertGoods" class="jxnu.x3107.action.GoodsInfoAction" method="insertGoods">
+			<result name="insSU" type="chain">Pages</result>
+			<result name="insFA" >/goods/insertGoods.jsp</result>
+		</action>
+		<action name="edits" class="jxnu.x3107.action.GoodsInfoAction"
+			method="edits">
+			<result name="editSU" >/goods/editGoods.jsp</result>
+		</action>
+		<action name="editGoods" class="jxnu.x3107.action.GoodsInfoAction"
+			method="editGoods">
+			<result name="editSU" type="chain">Pages</result>
+			<result name="editFA" >/goods/editGoods.jsp</result>
+		</action>
+		<action name="Pages" class="jxnu.x3107.action.GoodsInfoAction" method="goodsByPage">
+			<result name="pageSU">/goods/goodsInfo.jsp</result>
+			<result name="pageF">/goods/goodsInfo.jsp</result>
+		</action>
+	<!-- 	<action name="getGoodsInfo"></action> -->
+
+	</package>
+</struts>
